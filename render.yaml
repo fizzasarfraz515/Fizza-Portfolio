@@ -1,0 +1,27 @@
+# Render Blueprint: creates the static site automatically (New > Blueprint in the Render dashboard).
+services:
+  - type: web
+    runtime: static
+    name: fizza-portfolio
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    autoDeployTrigger: commit # redeploy on every push to the connected branch
+    pullRequestPreviewsEnabled: false
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
+      # Optional: paste a form endpoint (Formspree, etc.) to send contact messages directly.
+      - key: VITE_CONTACT_ENDPOINT
+        sync: false
+    routes:
+      # Single-page app: any path serves index.html instead of a 404 on refresh.
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
