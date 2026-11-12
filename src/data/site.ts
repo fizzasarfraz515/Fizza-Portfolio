@@ -3,13 +3,13 @@
  */
 export const site = {
   name: "Fizza Sarfraz",
-  brand: "FIZZA.",
+  brand: "FIZZA SARFRAZ.",
   title: "AI Developer & Machine Learning Engineer",
 
   // EDIT: replace with your real contact details.
-  email: "your.email@example.com",
-  linkedin: "https://www.linkedin.com/in/your-linkedin-handle",
-  fiverr: "https://www.fiverr.com/your-fiverr-username",
+  email: "fizzasarfraz515@gmail.com",
+  linkedin: "https://www.linkedin.com/in/fizza-sarfraz-45aa052a2/",
+  fiverr: "https://www.fiverr.com/sellers/fizzasarfraz1",
 
   github: "https://github.com/fizzasarfraz515",
 
